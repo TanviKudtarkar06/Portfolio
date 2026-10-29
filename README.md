@@ -1,4 +1,6 @@
-## Run locally
+# [View my portfolio](https://tanvikudtarkar06.github.io/Portfolio/)
+
+## Or... Run it locally!!
 
 No build tools or dependencies required.
 
