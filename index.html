@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050817">
+  <title>Tanvi.exe — Developer Portfolio</title>
+  <meta name="description" content="Tanvi's neon-coded corner of the internet: projects, experiments, and things she's learning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="circuit-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Tanvi home"><span class="brand-bracket">&lt;</span>TANVI<span class="brand-dot">.</span>exe<span class="brand-bracket"> /&gt;</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#stack">Tech stack</a><a href="#about">About</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" id="sound-toggle" aria-label="Toggle ambient mode" title="Toggle ambient mode">♫</button>
+      <button class="icon-button" id="theme-toggle" aria-label="Toggle visual mode" title="Toggle visual mode">◐</button>
+      <a class="github-button" href="https://github.com/TanviKudtarkar06" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      <button class="menu-button" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell reveal" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> SYSTEM ONLINE <span class="eyebrow-divider">/</span> DEVELOPER PROFILE</div>
+        <p class="micro-label">HELLO, WORLD! I'M</p>
+        <h1>Tanvi<span class="neon-period">.</span><span class="title-line">building <span class="gradient-text" id="rotating-word">ideas</span><span class="cursor">_</span></span></h1>
+        <p class="hero-description">A curious developer exploring the space between <span class="cyan">good ideas</span> and <span class="pink">real things</span>. Learning out loud, one commit at a time.</p>
+        <div class="tag-row"><span>[ BUILD ]</span><span>[ LEARN ]</span><span>[ EXPLORE ]</span><span>[ REPEAT ]</span></div>
+        <div class="hero-actions">
+          <a class="primary-button" href="#projects">Explore my work <span>↗</span></a>
+          <button class="secondary-button" id="terminal-focus">Open terminal <span>⌘</span></button>
+        </div>
+        <div class="status-line"><span class="status-pulse"></span> Currently curious about <strong>AI/ML</strong>, web dev &amp; creative tech</div>
+      </div>
+
+      <div class="hero-art" aria-label="Animated holographic tech illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="planet planet-one"></div><div class="planet planet-two"></div>
+        <div class="floating-code code-a"><span>01</span> const dreams = true;<br><span>02</span> build(dreams);<br><span>03</span> <b>return</b> ✦</div>
+        <div class="floating-code code-b"><span>~/tanvi</span><br>git commit -m<br><b>"made it cooler"</b></div>
+        <div class="chip-platform"><div class="chip-core"><div class="bot-face"><span></span><span></span></div><div class="bot-ear left"></div><div class="bot-ear right"></div></div></div>
+        <div class="circuit-ring ring-a"></div><div class="circuit-ring ring-b"></div>
+        <div class="art-caption">good code,<br><em>brighter days ♡</em></div>
+        <span class="spark spark-1">✦</span><span class="spark spark-2">✧</span><span class="spark spark-3">✦</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Interests"><div class="ticker-track">
+      <span>✳ SOFTWARE</span><span>✳ AI / ML</span><span>✳ CREATIVE CODING</span><span>✳ OPEN SOURCE</span><span>✳ EXPERIMENTS</span><span>✳ SOFTWARE</span><span>✳ AI / ML</span><span>✳ CREATIVE CODING</span><span>✳ OPEN SOURCE</span><span>✳ EXPERIMENTS</span>
+    </div></section>
+
+    <section class="dashboard-grid section-shell">
+      <article class="panel terminal-panel reveal" id="terminal-panel">
+        <div class="panel-head"><div class="window-dots"><i></i><i></i><i></i></div><span>tanvi@github: ~/intro</span><button class="panel-minimize" aria-label="Minimize terminal">−</button></div>
+        <div class="terminal-body" id="terminal-body">
+          <p><span class="prompt">➜</span> <span class="command">whoami</span></p>
+          <p class="terminal-output">Tanvi — curious human, aspiring builder <span class="pink">♡</span></p>
+          <p><span class="prompt">➜</span> <span class="command">cat goals.txt</span></p>
+          <ul class="terminal-list"><li><span>✓</span> Make useful things</li><li><span>✓</span> Learn something every day</li><li><span class="unchecked">□</span> Build something unforgettable</li><li><span class="unchecked">□</span> Leave the code better than I found it</li></ul>
+          <form id="terminal-form" class="terminal-form"><label for="terminal-input"><span class="prompt">➜</span> tanvi@github:~$</label><input id="terminal-input" autocomplete="off" spellcheck="false" placeholder="try: help" aria-label="Terminal command"><button type="submit" aria-label="Run command">↵</button></form>
+          <div id="terminal-response" aria-live="polite"></div>
+        </div>
+      </article>
+
+      <article class="panel music-panel reveal">
+        <div class="panel-head"><span><span class="equalizer"><i></i><i></i><i></i></span> NOW PLAYING</span><span class="tiny-live">DEMO MODE</span></div>
+        <div class="music-content">
+          <div class="album-art"><div class="album-moon"></div><div class="album-city"></div><span>midnight<br>coding club</span></div>
+          <div class="track-info"><strong>Midnight Coding</strong><span>lofi.exe · focus mix</span><div class="waveform" id="waveform"></div></div>
+        </div>
+        <div class="music-progress"><span id="progress-fill"></span></div>
+        <div class="music-meta"><span id="track-time">01:27</span><span>03:42</span></div>
+        <div class="music-controls"><button aria-label="Previous track" id="prev-track">↶</button><button aria-label="Play or pause visualizer" id="play-toggle" class="play-button">Ⅱ</button><button aria-label="Next track" id="next-track">↷</button></div>
+        <p class="tiny-note">Just a visual music-player fidget — no audio plays.</p>
+      </article>
+
+      <article class="panel stats-panel reveal">
+        <div class="panel-head"><span>▦ GITHUB ENERGY</span><span class="tiny-live">SIMULATED</span></div>
+        <div class="stats-content"><div class="contribution-grid" id="contribution-grid" aria-label="Decorative contribution grid"></div><div class="stats-ring"><div><strong>∞</strong><span>potential</span></div></div></div>
+        <div class="stats-footer"><span><strong id="commit-count">0</strong> tiny wins counted</span><span class="cyan">consistency.exe</span></div>
+        <p class="tiny-note">Decorative demo stats — connect real GitHub data later.</p>
+      </article>
+    </section>
+
+    <section class="section-shell section-block reveal" id="projects">
+      <div class="section-heading"><div><p class="micro-label">01 / THINGS I'M BUILDING</p><h2>Featured <span class="gradient-text">projects</span></h2></div><span class="section-aside">small ideas → real things <span class="cyan">↘</span></span></div>
+      <div class="project-grid">
+        <article class="project-card" data-tilt><div class="project-visual visual-nfc"><div class="nfc-rings">)))</div><div class="mini-map"><span>●</span><i></i><b>YOU ARE HERE</b></div><span class="visual-label">NAVIGATION / NFC</span></div><div class="project-details"><div class="project-title"><h3>NaviNFC</h3><span class="project-arrow">↗</span></div><p>Exploring indoor navigation with NFC tags and friendly wayfinding.</p><div class="chips"><span>Python</span><span>IoT</span><span>AR</span></div></div></article>
+        <article class="project-card" data-tilt><div class="project-visual visual-nlp"><div class="doc-window"><span></span><span></span><span></span><hr><i></i><i></i><i></i><b>summary.generate()</b></div><span class="visual-label">NLP / SUMMARIZATION</span></div><div class="project-details"><div class="project-title"><h3>Meeting Summarizer</h3><span class="project-arrow">↗</span></div><p>Turning long conversations into useful, readable summaries.</p><div class="chips"><span>Python</span><span>NLP</span><span>LLMs</span></div></div></article>
+        <article class="project-card" data-tilt><div class="project-visual visual-event"><div class="event-card"><span>EVENT / 001</span><b>Find your<br>next thing.</b><i>↗</i></div><span class="visual-label">WEB / COMMUNITY</span></div><div class="project-details"><div class="project-title"><h3>EventHub</h3><span class="project-arrow">↗</span></div><p>A concept for discovering events and keeping plans in one place.</p><div class="chips"><span>React</span><span>Firebase</span><span>Figma</span></div></div></article>
+      </div>
+      <p class="tiny-note project-disclaimer">Project cards are sample portfolio content. Replace descriptions and links with Tanvi's real work before publishing.</p>
+    </section>
+
+    <section class="section-shell split-section reveal" id="stack">
+      <div class="panel stack-panel">
+        <div class="panel-head"><span>02 / TECH ARSENAL</span><span class="cyan">[ loading skills... ]</span></div>
+        <div class="stack-icons">
+          <div class="stack-icon" title="Python"><b>Py</b><span>Python</span></div><div class="stack-icon" title="JavaScript"><b>JS</b><span>JavaScript</span></div><div class="stack-icon" title="React"><b>⚛</b><span>React</span></div><div class="stack-icon" title="Git"><b>⑂</b><span>Git</span></div><div class="stack-icon" title="HTML"><b>〈/〉</b><span>HTML/CSS</span></div><div class="stack-icon" title="AI/ML"><b>◈</b><span>AI / ML</span></div>
+        </div>
+      </div>
+      <div class="panel progress-panel">
+        <div class="panel-head"><span>03 / CURRENTLY LEARNING</span><span class="pink">always in beta ♡</span></div>
+        <div class="skill-row"><div><span>Python projects</span><b>75%</b></div><div class="skill-track"><i style="--progress:75%"></i></div></div>
+        <div class="skill-row"><div><span>Web development</span><b>60%</b></div><div class="skill-track"><i style="--progress:60%"></i></div></div>
+        <div class="skill-row"><div><span>AI / ML exploration</span><b>45%</b></div><div class="skill-track"><i style="--progress:45%"></i></div></div>
+        <div class="skill-row"><div><span>Open source</span><b>in progress</b></div><div class="skill-track"><i style="--progress:35%"></i></div></div>
+        <p class="tiny-note">Demo progress bars — adjust them to reflect her real skills.</p>
+      </div>
+    </section>
+
+    <section class="section-shell about-section reveal" id="about">
+      <div class="about-orb"><div class="orb-core">t<span>.</span></div><i class="orb-ring ring-1"></i><i class="orb-ring ring-2"></i><i class="orb-ring ring-3"></i></div>
+      <div class="about-copy"><p class="micro-label">04 / HUMAN BEHIND THE COMMITS</p><h2>Curiosity is my <span class="gradient-text">superpower.</span></h2><p>I like learning how things work, trying ideas that might fail, and turning those experiments into something useful. This page is a living work in progress — just like me.</p><blockquote>“A little progress every day adds up to big results.”</blockquote><a class="text-link" href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noreferrer">Come say hi on GitHub <span>↗</span></a></div>
+    </section>
+
+    <section class="section-shell fidget-zone reveal">
+      <div class="section-heading"><div><p class="micro-label">BONUS / PLAY WITH THE INTERFACE</p><h2>Little <span class="gradient-text">fidgets</span></h2></div><span class="section-aside">because why should buttons be boring?</span></div>
+      <div class="fidget-grid">
+        <button class="fidget-card" id="glitch-button"><span class="fidget-symbol">⟁</span><strong>Glitch me</strong><small>Give the page a tiny system wobble.</small></button>
+        <button class="fidget-card" id="color-button"><span class="fidget-symbol color-wheel">◉</span><strong>Shift the spectrum</strong><small>Cycle through neon colorways.</small></button>
+        <button class="fidget-card" id="spark-button"><span class="fidget-symbol">✦</span><strong>Spawn some sparks</strong><small>Tap for a little digital confetti.</small></button>
+        <button class="fidget-card" id="counter-button"><span class="fidget-symbol">＋</span><strong>Count tiny wins</strong><small><span id="win-count">0</span> wins celebrated so far.</small></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-shell"><a class="brand" href="#home"><span class="brand-bracket">&lt;</span>TANVI<span class="brand-dot">.</span>exe<span class="brand-bracket"> /&gt;</span></a><p>Made with curiosity, caffeine &amp; a suspicious number of glowing borders.</p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
